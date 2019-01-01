@@ -1,0 +1,9 @@
+function E=cacuEnergy(V,d,A,D);
+[n,n]=size(V);
+t1=sumsqr(sum(V,2)-1);
+t2=sumsqr(sum(V,1)-1);
+permitV=V(:,2:n);
+permitV=[permitV V(:,1)];
+temp=d*permitV;
+t3=sum(sum(V.*temp));
+E=0.5*(A*t1+A*t2+D+t3);
